@@ -1,0 +1,6 @@
+# Stuff git can ignore
+
+.env
+.idea
+*.pyc
+log/*
