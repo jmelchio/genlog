@@ -40,9 +40,12 @@ def generate_log_line():
 
 def read_lines(source):
     with open(source, 'r') as source_file:
-        lines = source_file.readlines()
-
-    return lines
+        while True:
+            line = source_file.readline()
+            if len(line) > 0:
+                yield line
+            else:
+                source_file.seek(0)
 
 
 def produce_lines(destination, lines=None, verbose=False):
@@ -50,9 +53,11 @@ def produce_lines(destination, lines=None, verbose=False):
         if lines:
             for line in lines:
                 time.sleep(0.2)
+                if not line.endswith('\n'):
+                    line = line + '\n'
                 destination_file.write(line)
                 if verbose:
-                    print(line)
+                    print(line[:-1])
         else:
             while True:
                 time.sleep(0.2)
