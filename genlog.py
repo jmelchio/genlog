@@ -22,7 +22,6 @@ Where:
     
 Options:
     -v or --verbose     also show lines on stdout
-    -h or --help        show this help message
 """
 
 
@@ -82,8 +81,6 @@ def main(argv=None):
         for option, value in opts:
             if option in ("-v", "--verbose"):
                 verbose = True
-            if option in ("-h", "--help"):
-                raise Usage(help_message)
 
         if len(args) < 1:
             raise Usage(help_message)
