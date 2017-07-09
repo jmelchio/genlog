@@ -42,6 +42,8 @@ def read_lines(source):
         while True:
             line = source_file.readline()
             if len(line) > 0:
+                if not line.endswith('\n'):
+                    line = line + '\n'
                 yield line
             else:
                 source_file.seek(0)
