@@ -19,7 +19,7 @@ Usage: python genlog.py [options] DESTINATION [SOURCE]
 Where:
     DESTINATION file to log the lines to, only basename is needed, program will add timestamp and .log extension
     SOURCE      optional file to use as template and spit out line by line to DESTINATION
-    
+
 Options:
     -v or --verbose     also show lines on stdout
 """
